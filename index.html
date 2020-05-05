@@ -1,0 +1,85 @@
+<!--Change the file extension to html-->
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Bolt IoT Led Example</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="manifest" href="./manifest.json">
+      <!-- iso support -->
+    <link rel="apple-touch-icon" href="./images/icons-64.png">
+    <link rel="apple-touch-icon" href="./images/icons-128.png">
+    <link rel="apple-touch-icon" href="./images/icons-192.png">
+    <link rel="apple-touch-icon" href="./images/icons-256.png">
+    <link rel="apple-touch-icon" href="./images/icons-512.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700"> 
+      <!-- <link rel="stylesheet" href="bcss.css"> -->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script type="text/javascript" src="https://cloud.boltiot.com/static/js/boltCommands.js"></script>
+      <script type="text/javascript">
+         // The following line will set the api key and device name. It will be auto-initialized by Bolt cloud.
+         setKey('d30e2e6a-1e4e-4f59-8f32-3f97b974d7fb','BOLT10909395');
+      </script>
+      <style>
+      .cbsize{
+         height: 100vh;
+      }
+      .cbsize2{
+         min-height: 50vh;
+         width: 80vh;
+      }
+      </style>
+   </head>
+   <body>
+      <div class="container d-flex justify-content-center align-items-center cbsize">
+         <div class="wrapper border cbsize2 shadow">
+            <div class="header text-center">
+               <h2>IOT BOLT</h2>
+               <p>Room Buttons</p>
+            </div>
+            <div class="buttonssection d-flex flex-column align-items-center col-lg-12 col-md-12 col-sm-12 col-xs-12 border py-3">
+               <div class="col-lg-8 text-center">
+                  <button type="submit" class="btn btn-success b1 my-2 col-lg-10" onclick="digitalWrite(0, 'HIGH');">ON</button>
+                  <button type="submit" class="btn btn-danger b1 my-2 col-lg-10" onclick="digitalWrite(0, 'LOW');">OFF</button>
+                  <input type="text"    class="my-2 b1 col-lg-10" name="intensity" placeholder="0-255" id="intensity" >
+                  <button type="submit" class="btn btn-info b1 mt-2 col-lg-10" onclick="analogWrite('0', document.getElementById('intensity').value);">INTENSITY</button>
+               </div>
+            </div>
+         </div>
+      </div>
+                     
+  
+      <script>
+         // This is the "Offline page" service worker
+         
+         // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+         
+         // Check compatibility for the browser we're running this in
+         if ("serviceWorker" in navigator) {
+           if (navigator.serviceWorker.controller) {
+             console.log("[PWA Builder] active service worker found, no need to register");
+           } else {
+             // Register the service worker
+             navigator.serviceWorker
+               .register("pwabuilder-sw.js", {
+                 scope: "./"
+               })
+               .then(function (reg) {
+                 console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+               });
+           }
+         }
+         </script>
+
+         
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+      <script src="service-worker.js"></script>
+   </body>
+</html>

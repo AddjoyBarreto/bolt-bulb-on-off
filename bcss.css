@@ -1,0 +1,37 @@
+   .vertical-center {
+         min-height: 100%;
+         min-height: 100vh;
+         display: flex;
+         align-items: center;
+         }
+         .fg{
+         	width: 23%;
+         	/*background-color: blue;*/
+         }
+         .btn-xl {
+         padding: 10px 20px;
+         font-size: 2vw;
+         text-align: center;
+         align-items: center;
+         width:20vw;
+         }
+         #intensity{
+         	font-size: 3rem;
+         	max-height: 5rem; 
+         }
+      
+         @media(max-width:200px)
+         {
+            #intensity{
+         	font-size: 1rem;
+         	max-height: 5rem; 
+            }
+         }
+
+         @media(max-width:400px)
+         {
+            #intensity{
+         	font-size: 2rem;
+         	max-height: 5rem; 
+            }
+         }

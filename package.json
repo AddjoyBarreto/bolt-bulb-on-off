@@ -1,0 +1,15 @@
+{
+  "name": "on-off-intensity-bolt",
+  "version": "1.0.0",
+  "description": "trial bolt app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "luke",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
